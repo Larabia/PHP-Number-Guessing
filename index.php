@@ -5,7 +5,7 @@ $correct_guesses = 0;
 $guess_high = 0;
 $guess_low = 0
 
-echo "Hello, my friend, to test your phychic abilities, you'll try to guess the number I'm thinking ten times. Then we'll see how powerfull your powers are!\n"."I'm going to think of numbers between 1 and 10 (inclusive). Do you think you can guess correctly?\n";
+echo "Hello, my friend, to test your phychic abilities, you'll try to guess the number I'm thinking ten times. Then we'll see how powerfull your powers are! I'm going to think of numbers between 1 and 10 (inclusive). Do you think you can guess correctly?\n";
 
 function guessNumber(){
   
@@ -41,3 +41,14 @@ guessNumber();
 guessNumber();
 guessNumber();
 guessNumber();
+
+$good_guesses = $correct_guesses/$play_count * 100;
+
+echo "\nAfter $play_count rounds, here are some facts about your guessing:\nYou guessed the number correctly $good_guesses% of the time.\n";
+
+if ($guess_high>$guess_low){
+  echo "\nWhen you guessed wrong, you tended to guess high.\n";
+}elseif ($guess_high < $guess_low){
+  echo "\nWhen you guessed wrong, you tended to guess low.\n"
+}
+
